@@ -8,7 +8,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,43 +20,10 @@ box-sizing:border-box;
 }
 
 body{
-font-family:'Montserrat',sans-serif;
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(-45deg,#ff9fc7,#ffd4ea,#ffeccf,#ffc6df);
-background-size:400% 400%;
-animation:bg 12s ease infinite;
-}
-
-h1{
-font-family:'Playfair Display',serif;
-font-size:72px;
-font-weight:700;
-color:#d63384;
-margin-top:25px;
-letter-spacing:2px;
-line-height:1.2;
-opacity:0;
-animation:title 2s forwards;
-animation-delay:.5s;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
 
 font-family:'Montserrat',sans-serif;
 
 height:100vh;
-
-overflow:hidden;
 
 display:flex;
 
@@ -63,15 +31,17 @@ justify-content:center;
 
 align-items:center;
 
-background:linear-gradient(-45deg,#ff9fc7,#ffd4ea,#ffeccf,#ffc6df);
+overflow:hidden;
+
+background:linear-gradient(-45deg,#ffb7d5,#ffdcec,#fff4f8,#ffd1e7);
 
 background-size:400% 400%;
 
-animation:bg 12s ease infinite;
+animation:bgMove 15s ease infinite;
 
 }
 
-@keyframes bg{
+@keyframes bgMove{
 
 0%{background-position:0% 50%;}
 
@@ -87,35 +57,35 @@ position:relative;
 
 width:90%;
 
-max-width:850px;
+max-width:900px;
 
-padding:50px;
-
-border-radius:35px;
-
-background:rgba(255,255,255,.18);
-
-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.35);
-
-box-shadow:0 25px 60px rgba(0,0,0,.2);
+padding:60px;
 
 text-align:center;
 
-animation:card 2s;
+background:rgba(255,255,255,.25);
+
+backdrop-filter:blur(20px);
+
+border-radius:35px;
+
+box-shadow:0 25px 70px rgba(0,0,0,.15);
+
+border:1px solid rgba(255,255,255,.4);
 
 z-index:2;
 
+animation:show 1.8s;
+
 }
 
-@keyframes card{
+@keyframes show{
 
 from{
 
 opacity:0;
 
-transform:translateY(60px);
+transform:translateY(40px);
 
 }
 
@@ -141,11 +111,9 @@ border-radius:50%;
 
 overflow:hidden;
 
-border:7px solid white;
+border:8px solid white;
 
-box-shadow:0 0 45px rgba(255,192,203,.8);
-
-animation:float 4s ease-in-out infinite;
+box-shadow:0 0 35px rgba(255,192,203,.8);
 
 }
 
@@ -159,96 +127,37 @@ object-fit:cover;
 
 }
 
-@keyframes float{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
-
-}
-
 h1{
 
-font-family:'Marck Script',cursive;
+font-family:'Playfair Display',serif;
 
-font-size:78px;
+font-size:68px;
 
-color:#ff2d6f;
+color:#d63384;
 
 margin-top:25px;
-
-opacity:0;
-
-animation:title 2s forwards;
-
-animation-delay:.5s;
-
-}
-
-@keyframes title{
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
 
 }
 
 .text{
-    font-family:'Montserrat',sans-serif;
-    margin-top:30px;
-    font-size:24px;
-    line-height:1.9;
-    color:#5d3d47;
-    opacity:0;
-    animation:text 2s forwards;
-    animation-delay:1.8s;
-}
 
-@keyframes text{
+margin-top:30px;
 
-to{
+font-size:24px;
 
-opacity:1;
+line-height:1.9;
 
-}
-
-from{
-
-opacity:0;
-
-}
+color:#5f4550;
 
 }
 
 audio{
 
 display:none;
-
-}
-  .sakura{
-position:absolute;
+.sakura{
+position:fixed;
 top:-50px;
-font-size:24px;
+font-size:22px;
 pointer-events:none;
 animation:fall linear infinite;
 z-index:1;
@@ -268,46 +177,11 @@ opacity:0;
 }
 }
 
-.glow{
-position:absolute;
-width:300px;
-height:300px;
-border-radius:50%;
-background:rgba(255,255,255,.25);
-filter:blur(90px);
-top:-100px;
-right:-100px;
-z-index:0;
-}
-
-.heart{
-position:absolute;
-color:#ff5c9d;
-font-size:18px;
-animation:heartUp 6s linear infinite;
-pointer-events:none;
-}
-
-@keyframes heartUp{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-100%{
-transform:translateY(-100px);
-opacity:0;
-}
-}
-
 </style>
+
 </head>
 
 <body>
-
-<div class="glow"></div>
 
 <audio id="music" autoplay loop>
 <source src="Dave ft. Tems Raindance.mp3" type="audio/mpeg">
@@ -322,15 +196,21 @@ opacity:0;
 <h1>Туған күніңмен,<br>Анашым ❤️</h1>
 
 <div class="text">
-Анашым, туған күніңіз құтты болсын!<br><br>
 
-Сізге зор денсаулық, ұзақ ғұмыр,
-шексіз бақыт пен қуаныш тілеймін.<br><br>
+Анашым! 💖<br><br>
 
-Әр күніңіз күлкіге,
-жүрегіңіз махаббатқа,
-үйіңіз берекеге толы болсын.
-<br><br>
+Туған күніңіз құтты болсын! 🌸<br><br>
+
+Сізге зор денсаулық,
+ұзақ ғұмыр,
+шексіз бақыт,
+береке,
+махаббат
+және барлық армандарыңыздың орындалуын тілеймін.<br><br>
+
+Әр күніңіз қуанышқа,
+жүрегіңіз жылулыққа,
+ал өміріңіз бақытқа толы болсын.<br><br>
 
 Мен сізді шексіз жақсы көремін! ❤️
 
@@ -342,56 +222,63 @@ opacity:0;
 
 const music=document.getElementById("music");
 
-window.onload=()=>{
+music.volume=0.6;
+
+window.addEventListener("load",()=>{
 
 music.play().catch(()=>{});
 
-}
+});
 
-for(let i=0;i<35;i++){
+for(let i=0;i<40;i++){
 
-let s=document.createElement("div");
+const flower=document.createElement("div");
 
-s.className="sakura";
+flower.className="sakura";
 
-s.innerHTML="🌸";
+flower.innerHTML="🌸";
 
-s.style.left=Math.random()*100+"vw";
+flower.style.left=Math.random()*100+"vw";
 
-s.style.animationDuration=(6+Math.random()*6)+"s";
+flower.style.animationDuration=(6+Math.random()*6)+"s";
 
-s.style.animationDelay=Math.random()*5+"s";
+flower.style.animationDelay=Math.random()*5+"s";
 
-document.body.appendChild(s);
+document.body.appendChild(flower);
 
 }
 
 setInterval(()=>{
 
-let h=document.createElement("div");
+const heart=document.createElement("div");
 
-h.className="heart";
+heart.innerHTML="💖";
 
-h.innerHTML="❤";
+heart.style.position="fixed";
+heart.style.left=Math.random()*100+"vw";
+heart.style.bottom="-30px";
+heart.style.fontSize=(18+Math.random()*20)+"px";
+heart.style.pointerEvents="none";
+heart.style.zIndex="3";
 
-h.style.left=Math.random()*100+"vw";
+heart.animate([
+{transform:"translateY(0)",opacity:0},
+{opacity:1,offset:0.2},
+{transform:"translateY(-120vh)",opacity:0}
+],{
+duration:7000,
+iterations:1
+});
 
-h.style.fontSize=(18+Math.random()*20)+"px";
-
-h.style.animationDuration=(5+Math.random()*3)+"s";
-
-document.body.appendChild(h);
+document.body.appendChild(heart);
 
 setTimeout(()=>{
+heart.remove();
+},7000);
 
-h.remove();
-
-},8000);
-
-},400);
+},700);
 
 </script>
 
 </body>
-
 </html>
