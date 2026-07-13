@@ -1,4 +1,143 @@
 <!DOCTYPE html>
-<html>
-...
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Туған күніңмен, Анашым!</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9ec4,#ffd6e7,#ffeaa7);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.card{
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+text-align:center;
+color:white;
+width:90%;
+max-width:700px;
+box-shadow:0 0 25px rgba(0,0,0,.3);
+}
+
+img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+border:6px solid white;
+margin-bottom:20px;
+}
+
+h1{
+font-size:42px;
+margin:10px;
+}
+
+p{
+font-size:22px;
+line-height:1.7;
+}
+
+button{
+margin-top:20px;
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:#ff4081;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#e91e63;
+}
+
+.heart{
+position:absolute;
+color:#ff4d88;
+animation:fly 6s linear infinite;
+}
+
+@keyframes fly{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" autoplay loop>
+<source src="Dave ft. Tems Raindance.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+
+<img src="IMG_6596.HEIC">
+
+<h1>🌸 Туған күніңмен, Анашым! 🌸</h1>
+
+<p>
+Анашым! ❤️<br><br>
+
+Туған күніңіз құтты болсын!<br><br>
+
+Сізге зор денсаулық,
+ұзақ ғұмыр,
+бақыт,
+қуаныш,
+сәттілік және
+барлық армандарыңыздың орындалуын тілеймін.
+
+Әр күніңіз шаттыққа,
+жүрегіңіз махаббатқа толы болсын.
+
+Мен сізді шексіз жақсы көремін! 💖
+</p>
+
+<button onclick="playMusic()">🎵 Музыканы қосу</button>
+
+</div>
+
+<script>
+function playMusic(){
+document.getElementById("music").play();
+}
+
+window.onload=function(){
+document.getElementById("music").play().catch(()=>{});
+}
+
+setInterval(function(){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(20+Math.random()*25)+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},300);
+</script>
+
+</body>
 </html>
